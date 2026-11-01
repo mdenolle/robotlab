@@ -43,6 +43,7 @@ python scripts/check.py                                                  # link,
   - `images/`: real photos of each robot type (credits in [site/images/README.md](site/images/README.md)) and the hero picture.
   - `sw.js`, `install.js`, `manifest.webmanifest`: home-screen install and offline use.
 - `scripts/`: Python build, preview, and check tools.
+- `site/feedback.js`: the "Tell us what you think" form; answers currently go by email to the address in `FEEDBACK_EMAIL`.
 - `feedback-sheet/`: the Google Apps Script that writes answers from the "Tell us what you think" form into a private Google Sheet, with setup steps.
 - `.github/workflows/pages.yml`: builds, checks, and deploys to GitHub Pages.
 

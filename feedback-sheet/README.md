@@ -1,5 +1,7 @@
 # Feedback Sheet
 
+Not in use yet: the site currently sends feedback by email (`FEEDBACK_EMAIL` in `site/feedback.js`). Follow the steps below to switch to the Sheet instead.
+
 Answers from the website's "Tell us what you think" form go to a private Google Sheet, "RobotLab feedback", through the Apps Script in [Code.gs](Code.gs). Each answer becomes one row: time received, who (kid, parent, teacher, other), page, the four answers, and an optional grown-up email.
 
 ## Set up once

@@ -4,7 +4,7 @@
 //  - FEEDBACK_EMAIL: opens the visitor's email app with the answers filled in (shows this address publicly).
 // With neither set, visitors can still download their answers.
 const FEEDBACK_ENDPOINT='';
-const FEEDBACK_EMAIL='';
+const FEEDBACK_EMAIL='marinedenolle@gmail.com';
 
 (() => {
  const form=$('feedback-form');
@@ -40,7 +40,7 @@ const FEEDBACK_EMAIL='';
    finally{$('f-send').disabled=false;}
   }else if(FEEDBACK_EMAIL){
    location.href=`mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent('RobotLab feedback')}&body=${encodeURIComponent(asText(a))}`;
-   say('Your email app should open with your answers. Press send there.',true);
+   say(`Your email app should open with your answers. Press send there. If nothing opens, download your answers and email them to ${FEEDBACK_EMAIL}.`,true);
   }else say('Sending isn’t switched on yet. You can download your answers instead.');
  });
  $('f-download').onclick=()=>download(asText(answers()),'robotlab-feedback.txt');
