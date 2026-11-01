@@ -12,6 +12,7 @@ Alex started it on an iPad with ChatGPT; this repository is the cleaned-up expor
 - Search and filters, plus typed or spoken ideas matched to the closest starter project by keyword. It does not invent new hardware designs.
 - Parts lists, build steps, experiments, and a printable guide for each project.
 - Build progress saved in the browser (`localStorage`), so it stays on the device where it was made.
+- "3D print it": turn a photo or screenshot of a drawing into a printable STL file (raised drawing on a plate, the cut-out shape, or a plate with holes such as LED eyes). It runs in the browser; the picture never leaves the device.
 - An Arduino Uno sketch for the desk buddy ([site/desk-buddy.ino](site/desk-buddy.ino)).
 - A poster, a QR code for the live site, and "add to home screen" install with offline guides.
 
