@@ -1,5 +1,5 @@
 const CACHE = 'robotlab-studio-v4';
-const FILES = ['./index.html', './app.html', './app.js', './gallery.js', './discover.js', './feedback.js', './print.js', './polish.css', './images/brush.jpg', './images/desk.jpg', './images/rover.jpg', './images/line.jpg', './images/artist.jpg', './install.js', './desk-buddy.ino', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png'];
+const FILES = ['./index.html', './app.html', './helper.html', './app.js', './gallery.js', './discover.js', './feedback.js', './print.js', './polish.css', './images/brush.jpg', './images/desk.jpg', './images/rover.jpg', './images/line.jpg', './images/artist.jpg', './install.js', './desk-buddy.ino', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png'];
 const urls = new Set(FILES.map(path => new URL(path, self.registration.scope).href));
 async function safeResponse(response, html = false) {
   if (!response.ok || response.redirected) return false;
@@ -13,7 +13,7 @@ self.addEventListener('install', event => {
     for (const path of FILES) {
       const url = new URL(path, self.registration.scope).href;
       const response = await fetch(url, {cache:'reload'});
-      if (!await safeResponse(response, path === './index.html' || path === './app.html')) throw new Error('Offline assets unavailable');
+      if (!await safeResponse(response, path.endsWith('.html'))) throw new Error('Offline assets unavailable');
       await cache.put(url, response);
     }
   })());
@@ -38,7 +38,7 @@ self.addEventListener('fetch', event => {
     try {
       const response = await fetch(event.request);
       // Avoid storing sign-in pages or redirects in the offline shell.
-      if (await safeResponse(response, navigation || requestUrl.href === indexUrl || requestUrl.pathname.endsWith('/app.html'))) await cache.put(navigation ? navigationKey : event.request, response.clone());
+      if (await safeResponse(response, navigation || requestUrl.pathname.endsWith('.html'))) await cache.put(navigation ? navigationKey : event.request, response.clone());
       return response;
     } catch {
       const cached = await cache.match(navigation ? navigationKey : event.request);

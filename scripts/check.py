@@ -18,7 +18,7 @@ class Page(HTMLParser):
             if key in attrs:
                 self.links.append(attrs[key])
 
-for filename in ('index.html', 'app.html'):
+for filename in ('index.html', 'app.html', 'helper.html'):
     page = Page()
     page.feed((ROOT / filename).read_text(encoding='utf-8'))
     assert len(page.ids) == len(set(page.ids)), filename + ': duplicate IDs'

@@ -13,6 +13,7 @@ Alex started it on an iPad with ChatGPT; this repository is the cleaned-up expor
 - Parts lists, build steps, experiments, and a printable guide for each project.
 - Build progress saved in the browser (`localStorage`), so it stays on the device where it was made.
 - "3D print it": turn a photo or screenshot of a drawing into a printable STL file (raised drawing on a plate, the cut-out shape, or a plate with holes such as LED eyes). It runs in the browser; the picture never leaves the device.
+- Robot Helper (coming soon): a button at the bottom of the app opens `helper.html`, the placeholder page for a future helper that makes robot instruction books
 - An Arduino Uno sketch for the desk buddy ([site/desk-buddy.ino](site/desk-buddy.ino)).
 - A poster, a QR code for the live site, and "add to home screen" install with offline guides.
 
