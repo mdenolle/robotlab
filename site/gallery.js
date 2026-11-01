@@ -6,7 +6,7 @@
   if(!Object.prototype.hasOwnProperty.call(recipes,type))return;
   preview=type;const r=recipes[type];
   const picture=document.getElementById('robot-dialog-image');
-  picture.src='images/'+type+'.svg';picture.alt='Illustration of '+r.title;
+  picture.src='images/'+type+'.jpg';picture.alt='Photo of a robot like '+r.title;document.getElementById('robot-dialog-credit').innerHTML=photoCredit(type);
   document.getElementById('robot-dialog-title').textContent=r.title;
   document.getElementById('robot-dialog-description').textContent=r.desc;
   document.getElementById('robot-dialog-limit').textContent='What it can do: '+r.limit;

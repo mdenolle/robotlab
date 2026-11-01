@@ -40,7 +40,7 @@ python scripts/check.py                                                  # link,
 
 - `site/`: the website and app source. [site/README.md](site/README.md) lists the files.
   - `index.html`: main page; `app.html`: the build app; `app.js`: projects, search, guides, saved progress.
-  - `images/`: project illustrations and the hero picture.
+  - `images/`: real photos of each robot type (credits in [site/images/README.md](site/images/README.md)) and the hero picture.
   - `sw.js`, `install.js`, `manifest.webmanifest`: home-screen install and offline use.
 - `scripts/`: Python build, preview, and check tools.
 - `feedback-sheet/`: the Google Apps Script that writes answers from the "Tell us what you think" form into a private Google Sheet, with setup steps.
@@ -48,6 +48,6 @@ python scripts/check.py                                                  # link,
 
 ## Status
 
-Tested in desktop and mobile browsers while it was hosted on ChatGPT. Not yet tested: installing on a real device from the GitHub Pages site, and building the robots themselves. The pictures are illustrations, so real builds will look different.
+Tested in desktop and mobile browsers while it was hosted on ChatGPT. Not yet tested: installing on a real device from the GitHub Pages site, and building the robots themselves. The robot photos show other makers' robots of the same type, so Alex's builds will look different.
 
 [site/research-notes.md](site/research-notes.md) lists the sources used to choose the five projects.

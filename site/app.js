@@ -18,6 +18,16 @@ const coolThings={
  line:['Design your own racetrack with dark tape','Time a lap, then tune the speed to beat your record','Add a sharp corner and see if it can stay on the line']
 };
 for(const k in coolThings)recipes[k].cool=coolThings[k];
+// Real photos of robots like each project, from Wikimedia Commons. Credits are shown with every photo.
+const photoCredits={
+ brush:{by:'Achiahe',license:'CC BY-SA 3.0',url:'https://commons.wikimedia.org/wiki/File:Bristlebot_pic..jpg'},
+ artist:{by:'Sally Wilson',license:'CC BY-SA 2.0',url:'https://commons.wikimedia.org/wiki/File:Scribbling_machine_(14646828792).jpg'},
+ desk:{by:'Cmcarreras',license:'CC BY-SA 3.0',url:'https://commons.wikimedia.org/wiki/File:Breadboard_with_LED_and_Arduino.jpg'},
+ rover:{by:'Anani A. George',license:'CC0',url:'https://commons.wikimedia.org/wiki/File:Obstacle_avoidance_robot_car.jpg'},
+ line:{by:'Gsparr86',license:'CC BY-SA 4.0',url:'https://commons.wikimedia.org/wiki/File:Line_following_robot_final_product.JPG'}
+};
+for(const k in photoCredits)recipes[k].photo=photoCredits[k];
+const photoCredit=k=>{const p=recipes[k].photo;return `Real photo of a robot like this one by <a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.by}</a> (${p.license}), cropped. Yours will look different.`};
 const projectOrder=['brush','desk','rover','line','artist'];
 let selected='brush',activeFilter='all',suggested=null,searchQuery='';
 const $=id=>document.getElementById(id);
@@ -33,7 +43,7 @@ function matchingProjects(){
 function renderCards(){
  const visible=matchingProjects();
  if(visible.length&&!visible.includes(selected))selected=visible[0];
- $('project-cards').innerHTML=visible.length?visible.map(k=>{const r=recipes[k];return `<article class="project-card ${k===selected?'selected':''}"><button type="button" class="picture-button" data-preview="${k}" aria-label="See a picture of ${r.title}"><img src="images/${k}.svg" alt="Illustration of ${r.title}" width="640" height="460" loading="lazy"></button><div class="card-body"><span class="category">${r.category==='first'?'Start small':r.category==='companion'?'A little personality':'Sense & explore'}</span><strong>${r.title}</strong><p>${r.desc}</p><span class="level">${r.level} · ${r.time}</span><div class="card-buttons"><button type="button" data-preview="${k}">Meet this robot ↗</button><button type="button" data-type="${k}" aria-pressed="${k===selected}">${k===selected?'Selected ✓':'Choose to build'}</button></div></div></article>`}).join(''):'<div class="empty-results"><strong>No matching robot projects yet.</strong><p>Try “rover”, “buddy”, or “drawing”, or reset your search and filters.</p><button id="reset-results" class="secondary">Show all robots</button></div>';
+ $('project-cards').innerHTML=visible.length?visible.map(k=>{const r=recipes[k];return `<article class="project-card ${k===selected?'selected':''}"><button type="button" class="picture-button" data-preview="${k}" aria-label="See a photo of ${r.title}"><img src="images/${k}.jpg" alt="Photo of a robot like ${r.title}" width="640" height="460" loading="lazy"></button><div class="card-body"><span class="category">${r.category==='first'?'Start small':r.category==='companion'?'A little personality':'Sense & explore'}</span><strong>${r.title}</strong><p>${r.desc}</p><span class="level">${r.level} · ${r.time}</span><div class="card-buttons"><button type="button" data-preview="${k}">Meet this robot ↗</button><button type="button" data-type="${k}" aria-pressed="${k===selected}">${k===selected?'Selected ✓':'Choose to build'}</button></div></div></article>`}).join(''):'<div class="empty-results"><strong>No matching robot projects yet.</strong><p>Try “rover”, “buddy”, or “drawing”, or reset your search and filters.</p><button id="reset-results" class="secondary">Show all robots</button></div>';
  $('project-cards').querySelectorAll('[data-type]').forEach(b=>b.onclick=()=>selectProject(b.dataset.type));
  $('search-count').textContent=`${visible.length} project${visible.length===1?'':'s'} found`;
  $('clear-search').hidden=!searchQuery;

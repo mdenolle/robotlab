@@ -36,7 +36,7 @@ assert manifest['start_url'] == './app.html'
 for icon in manifest['icons']:
     assert (ROOT / icon['src']).is_file()
 for robot in ('brush', 'desk', 'rover', 'line', 'artist'):
-    assert (ROOT / 'images' / (robot + '.svg')).is_file()
+    assert (ROOT / 'images' / (robot + '.jpg')).is_file()
 with zipfile.ZipFile(ROOT / 'robotlab-website.zip') as archive:
     assert archive.testzip() is None
     assert 'RobotLab/images/README.md' in archive.namelist()

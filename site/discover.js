@@ -48,7 +48,7 @@
 
  function card(m,want){
   const r=recipes[m.k];
-  return `<div class="d-top"><div class="d-picture"><img src="images/${m.k}.svg" alt="Illustration of ${esc(r.title)}" width="640" height="460"></div><div>
+  return `<div class="d-top"><div class="d-picture"><img src="images/${m.k}.jpg" alt="Photo of a robot like ${esc(r.title)}" width="960" height="690"><p class="tiny">${photoCredit(m.k)}</p></div><div>
    <div class="eyebrow">${m===lastRanked[0]?'YOUR BEST MATCH':'ANOTHER GOOD MATCH'}</div>
    <h3>Meet ${esc(nameFor(want,r))}</h3><p>${esc(r.desc)}</p>
    <h4>Why it fits you</h4><ul>${list(m.why.length?m.why:['It is a good place to start.'])}</ul>
@@ -62,7 +62,7 @@
  function render(want,pick){
   lastWant=want;lastRanked=rank(want);shown=lastRanked.find(m=>m.k===pick)||lastRanked[0];
   const others=lastRanked.filter(m=>m!==shown).slice(0,2);
-  $('discover-result').innerHTML=card(shown,want)+`<h4 class="d-others-title">${shown===lastRanked[0]?'Other good matches':'More matches'}</h4><div class="d-others">${others.map(m=>`<article><img src="images/${m.k}.svg" alt="" width="120" height="86"><div><h3>${esc(recipes[m.k].title)}</h3><p>${esc(m.why[0]||recipes[m.k].desc)}</p><button type="button" class="secondary" data-d-show="${m.k}">See this one →</button></div></article>`).join('')}</div>`;
+  $('discover-result').innerHTML=card(shown,want)+`<h4 class="d-others-title">${shown===lastRanked[0]?'Other good matches':'More matches'}</h4><div class="d-others">${others.map(m=>`<article><img src="images/${m.k}.jpg" alt="" width="120" height="86"><div><h3>${esc(recipes[m.k].title)}</h3><p>${esc(m.why[0]||recipes[m.k].desc)}</p><button type="button" class="secondary" data-d-show="${m.k}">See this one →</button></div></article>`).join('')}</div>`;
   $('discover-result').hidden=false;
  }
  function saveText(){

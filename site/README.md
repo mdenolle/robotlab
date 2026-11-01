@@ -9,7 +9,7 @@ This folder is the website source. Edit these files, then run the Python preview
 - `feedback.js`: “Tell us what you think” form. Set `FEEDBACK_ENDPOINT` or `FEEDBACK_EMAIL` at the top to choose where answers go.
 - `gallery.js`: robot picture dialogs and buttons opening build guides.
 - `polish.css`: visual design and responsive layouts.
-- `images/`: illustrations, hero art, and a folder README.
+- `images/`: robot photos (with credits in its README) and hero art.
 - `install.js`, `manifest.webmanifest`, `sw.js`: home-screen install and offline features.
 - `icon*`: website/app icons.
 - `desk-buddy.ino`: Arduino sketch for the desk-buddy build.
