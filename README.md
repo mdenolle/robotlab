@@ -14,7 +14,7 @@ Alex started it on an iPad with ChatGPT; this repository is the cleaned-up expor
 - Build progress saved in the browser (`localStorage`), so it stays on the device where it was made.
 - "3D print it": turn a photo or screenshot of a drawing into a printable STL file (raised drawing on a plate, the cut-out shape, or a plate with holes such as LED eyes). It runs in the browser; the picture never leaves the device.
 - The app works like slides: a start slide lists every part (Discover, Choose a robot, Instructions, Cool things, 3D print, My builds, Add to my device, Feedback), and each part opens on its own slide with Back, All parts and Next (`site/slides.js`)
-- Robot Helper (coming soon): the button at the bottom of the start slide opens a placeholder slide for a future helper that makes robot instruction books
+- Robot Helper: the button at the bottom of the start slide opens a search over 20 famous real robots (Mars rovers, Spot, ASIMO, Canadarm2, ...). Each has an instruction book for a mini version to build at home, which can be printed or saved. Robots not in the library get a "not yet" message. The library and search are in `site/helper.js`; there is no AI behind it yet.
 - An Arduino Uno sketch for the desk buddy ([site/desk-buddy.ino](site/desk-buddy.ino)).
 - A poster, a QR code for the live site, and "add to home screen" install with offline guides.
 
