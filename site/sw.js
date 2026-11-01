@@ -1,5 +1,5 @@
 const CACHE = 'robotlab-studio-v4';
-const FILES = ['./index.html', './app.html', './helper.html', './app.js', './gallery.js', './discover.js', './feedback.js', './print.js', './polish.css', './images/brush.jpg', './images/desk.jpg', './images/rover.jpg', './images/line.jpg', './images/artist.jpg', './install.js', './desk-buddy.ino', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png'];
+const FILES = ['./index.html', './app.html', './slides.js', './app.js', './gallery.js', './discover.js', './feedback.js', './print.js', './polish.css', './images/brush.jpg', './images/desk.jpg', './images/rover.jpg', './images/line.jpg', './images/artist.jpg', './install.js', './desk-buddy.ino', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png'];
 const urls = new Set(FILES.map(path => new URL(path, self.registration.scope).href));
 async function safeResponse(response, html = false) {
   if (!response.ok || response.redirected) return false;

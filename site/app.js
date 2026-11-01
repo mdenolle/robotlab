@@ -78,10 +78,10 @@ function openGuide(restore=null){
  $('guide').querySelectorAll('input').forEach((c,i)=>{c.checked=Boolean(checked[i]);c.onchange=()=>{checked[i]=c.checked;updateProgress();persistGuide()}});
  updateProgress();persistGuide();
  $('save').onclick=()=>download(`${r.title}\n${r.level} | ${r.time} (estimate)\n${idea?'Your project note: '+idea+'\n':''}\nWHAT TO EXPECT\n${r.limit}\nCustom notes do not modify these starter instructions.\n\nPARTS\n${r.parts.join('\n')}\n\nSTEPS\n${r.steps.map((s,i)=>(i+1)+'. '+s).join('\n\n')}\n\nFIRST EXPERIMENT\n${r.challenge}\n\nREFERENCE\n${r.sourceLabel}\n${r.source}\n${r.extraSource||''}${buildType==='desk'?'\nRobotLab code: '+new URL('desk-buddy.ino',location.href).href:''}\n\nDisconnect power before adjusting parts. Ask an adult for help with tools and wiring.`, 'robotlab-'+buildType+'-guide.txt');
- $('guide').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+ goSlide('guide');
 }
 $('generate').onclick=()=>{if(!matchingProjects().length)return;const old=savedBuilds[selected];openGuide(old||null)};
-$('myguide').onclick=e=>{if($('guide').hidden){e.preventDefault();$('status').textContent='Choose your robot and create a guide to get started.';$('builder').scrollIntoView({behavior:'smooth'})}};
+$('myguide').onclick=e=>{if($('guide').hidden){e.preventDefault();$('status').textContent='Choose your robot and create a guide to get started.';goSlide('builder')}};
 const Speech=window.SpeechRecognition||window.webkitSpeechRecognition;
 if(Speech){
  const rec=new Speech();let listening=false,hadError=false;const micIcon=$('mic').innerHTML;rec.lang='en-US';rec.interimResults=false;
