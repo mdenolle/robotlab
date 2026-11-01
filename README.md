@@ -43,6 +43,7 @@ python scripts/check.py                                                  # link,
   - `images/`: project illustrations and the hero picture.
   - `sw.js`, `install.js`, `manifest.webmanifest`: home-screen install and offline use.
 - `scripts/`: Python build, preview, and check tools.
+- `feedback-sheet/`: the Google Apps Script that writes answers from the "Tell us what you think" form into a private Google Sheet, with setup steps.
 - `.github/workflows/pages.yml`: builds, checks, and deploys to GitHub Pages.
 
 ## Status
