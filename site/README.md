@@ -6,6 +6,7 @@ This folder is the website source. Edit these files, then run the Python preview
 - `app.html`: dedicated robot-building app.
 - `app.js`: search, keyword matching, instructions, and saved progress.
 - `discover.js`: “Discover your robot” form; ranks the five robots against what the builder wants and has.
+- `feedback.js`: “Tell us what you think” form. Set `FEEDBACK_ENDPOINT` or `FEEDBACK_EMAIL` at the top to choose where answers go.
 - `gallery.js`: robot picture dialogs and buttons opening build guides.
 - `polish.css`: visual design and responsive layouts.
 - `images/`: illustrations, hero art, and a folder README.
